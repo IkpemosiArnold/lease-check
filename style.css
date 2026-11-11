@@ -2,8 +2,7 @@
 @font-face { font-family: "Newsreader"; src: url("fonts/newsreader.woff2") format("woff2"); font-weight: 200 800; font-style: normal; font-display: swap; }
 @font-face { font-family: "Newsreader"; src: url("fonts/newsreader-italic.woff2") format("woff2"); font-weight: 200 800; font-style: italic; font-display: swap; }
 
-/* DIRECTION.md tokens. BuildQ's palette is blended in: its copper (#e5a269) is the
-   accent, and dark mode uses its navy-black ground and warm cream ink. */
+/* DIRECTION.md tokens. A copper accent; dark mode uses a navy-black ground and warm cream ink. */
 :root {
   --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;

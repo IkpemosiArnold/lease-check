@@ -1,6 +1,6 @@
 # Lease Check
 
-BuildQ's careers page describes a key term sitting on "page 74 of a second amendment to an amendment". This is a small version of that problem, built in a day.
+In project finance diligence, a key term can sit deep inside an amendment to an amendment. This is a small version of that problem, built in a day.
 
 Lease Check reads a solar lease PDF in your browser and gives each term with the page it came from and the exact sentence that says it. If the documents never state a term, it says "not found" and shows the nearest text, marked as not an answer.
 
@@ -64,13 +64,7 @@ A ground lease and two amendments, 7 pages, written for this demo. The names, la
 
 It follows the shared direction for these demos: rows split by hairlines instead of cards, Geist for the tool's own words, Newsreader for anything quoted from a document, and one underline that draws under the words a value comes from.
 
-Taken from BuildQ's own site (buildq.ai, read 11 Nov 2026), so it feels at home there:
-
-- The accent is BuildQ's copper (#e5a269 in dark mode, a darker #9a4f1f in light mode for contrast).
-- Dark mode uses BuildQ's navy-black ground (#0a0e18) and warm cream text (#ede7da).
-- The words are theirs: "page and span", "not found", diligence on leases and amendments.
-
-It is not BuildQ's product and uses no BuildQ logo, font or name as its title. The footer says who built it.
+The palette suits paperwork for energy projects: a copper accent (#e5a269 in dark mode, a darker #9a4f1f in light mode for contrast), and in dark mode a navy-black ground (#0a0e18) with warm cream text (#ede7da). The page is laid out like a term sheet: a label, a value, and where it came from.
 
 Fonts: Geist and Newsreader (SIL Open Font License), latin subsets in `fonts/`, served from this folder so the page makes no outside requests.
 
