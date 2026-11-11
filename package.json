@@ -1,0 +1,9 @@
+{
+  "name": "lease-check",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lease terms from a solar lease PDF, each tied to its page and quote, or not found.",
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}

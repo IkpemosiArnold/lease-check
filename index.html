@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lease Check</title>
+<meta name="description" content="Solar lease terms from a PDF, each linked to its page and span. When the documents do not say, it says not found.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfc">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e18">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+  <symbol id="i-none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2.2 2.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3.5L10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<main class="shell">
+  <div class="sheet-col">
+    <header class="top">
+      <p class="mark">Lease Check</p>
+      <h1>No page, no answer.</h1>
+      <p class="sub" id="docline"></p>
+    </header>
+
+    <section class="reading" aria-labelledby="summary">
+      <p class="summary" id="summary" role="status"><span class="sum-main">Reading the PDF</span></p>
+      <p class="chain" id="chain"></p>
+      <p class="jump" id="jump" hidden><a href="#agent-tool">Then check an agent's extraction</a></p>
+      <div id="groups" class="groups"></div>
+    </section>
+  </div>
+
+  <aside class="evidence-col" id="side" aria-live="polite"></aside>
+
+  <section class="tool" id="agent-tool" aria-labelledby="agent-h">
+    <h2 id="agent-h">Check an agent's extraction</h2>
+    <p class="tool-sub">Paste what a model pulled from the PDF: term, value, page, quote. Four errors are planted in the sample.</p>
+    <label class="sr" for="agent-in">Extraction as JSON</label>
+    <textarea id="agent-in" rows="7" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+    <div class="actions">
+      <button type="button" id="agent-check" class="btn primary">Check against the PDF</button>
+      <button type="button" id="agent-reset" class="btn text">Reset sample</button>
+    </div>
+    <p id="agent-error" class="error" role="alert" hidden></p>
+    <p id="agent-summary" class="summary small" role="status"></p>
+    <div id="agent-rows" class="rows"></div>
+  </section>
+
+  <section class="tool" id="own-tool" aria-labelledby="own-h">
+    <h2 id="own-h">Try your own lease</h2>
+    <p class="tool-sub">Read in this browser only; nothing is uploaded. The rules were written on the sample, so expect more "not found" on other leases.</p>
+    <div class="actions">
+      <label class="btn secondary file-btn"><input type="file" id="own-file" accept="application/pdf,.pdf" class="sr">Choose a PDF</label>
+      <span id="own-name" class="file-name"></span>
+    </div>
+    <p id="own-error" class="error" role="alert" hidden></p>
+  </section>
+
+  <footer class="foot">
+    <p>Built by Arnold Ikpemosi Adeyemi as a prototype for BuildQ's lease diligence. Not affiliated with BuildQ. Sample documents only, not legal advice.</p>
+    <p><a href="https://ikpemosi.work">ikpemosi.work</a></p>
+    <p><a href="https://github.com/IkpemosiArnold/lease-check">Source on GitHub</a></p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
